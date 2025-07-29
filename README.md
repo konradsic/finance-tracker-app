@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Finance Tracker App
+A simple finance tracker app built with Next.js, TypeScript, and Tailwind CSS. UI built on top of shadcn/ui components.
 
-## Getting Started
+### Features
+- [x] Account registration system using providers (currently only GitHub) or traditional email/password.
+- [x] User authentication with BetterAuth
+- [ ] Load transations from CSV file that will be parsed and stored in the database as a record.
+- [ ] Extend existing records with CRUD operations on single transactions or upload another CSV to merge.
+- [ ] Grid view of graphs, charts and informative data about the user's finances.
+- [ ] Advanced data filtering, sorting, categorizing and searching options.
+- [ ] Dark mode support.
+- [ ] Ability to easily toggle sign-on methods for supported providers.
 
-First, run the development server:
+### Installing and running the app
+Prerequisites: Node v20 or higher, pnpm package manager (install via `npm i -g pnpm`)
 
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/konradsic/finance-tracker-app.git
+    cd finance-tracker-app
+    ```
+2. Install dependencies:
+    ```bash
+    pnpm install
+    ```
+3. Copy the example environment file:
+    ```bash
+   cp .env.example .env
+   ```
+4. Set up your environment variables in the `.env` file. To use GitHub authentication, you need to create a GitHub OAuth app ([tutorial](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app))
+5. Run the development server:
+    ```bash
+    pnpm dev
+    ```
+6. Open your browser and navigate to `http://localhost:3000`
+
+### Running in production
+To run the app in production mode, you need to build it first:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm build
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Then you can start the production server:
+```bash
+pnpm start
+```
